@@ -3,15 +3,15 @@ package main;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FieldManager implements Field {
+public class FieldManager implements InterfaceField {
     /**
-     * The composite from the Field component in the composite design pattern
+     * A composite from the InterfaceField component in the composite design pattern
      */
 
     private long id;
     private String name;
 
-    private List<Field> childFields;
+    private List<InterfaceField> childFields;
 
     public FieldManager(long id, String name) {
         this.id = id;
@@ -20,14 +20,14 @@ public class FieldManager implements Field {
     }
 
     public void getFieldDetails() {
-        childFields.forEach(Field::getFieldDetails);
+        childFields.forEach(InterfaceField::getFieldDetails);
     }
 
-    public void addField(Field field) {
+    public void addField(InterfaceField field) {
         childFields.add(field);
     }
 
-    public void removeField(Field field) {
+    public void removeField(InterfaceField field) {
         childFields.remove(field);
     }
 }
