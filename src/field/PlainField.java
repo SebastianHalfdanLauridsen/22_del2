@@ -1,5 +1,8 @@
-package main;
+package field;
 
+/**
+ * A leaf class from the AbstractField composite in the field composite design pattern
+ */
 public class PlainField extends AbstractField {
     /**
      * A leaf class from the AbstractField composite in the composite design pattern

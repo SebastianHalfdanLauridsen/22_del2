@@ -1,5 +1,8 @@
-package main;
+package player;
 
+/**
+ * Holds a players balance
+ */
 public class Account {
     private long id;
     private long balance;
@@ -36,8 +39,11 @@ public class Account {
         return balance;
     }
 
-    public String toString(){
-        return id + " " + balance;
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", balance=" + balance +
+                '}';
     }
-
 }

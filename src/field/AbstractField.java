@@ -1,9 +1,9 @@
-package main;
+package field;
 
+/**
+ * A composite class from the InterfaceField component in the field composite design pattern
+ */
 public abstract class AbstractField implements InterfaceField {
-    /**
-     * A composite class from the InterfaceField component in the composite design pattern
-     */
 
     //attributes are protected because the subclasses should have access to them
     protected String name;

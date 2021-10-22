@@ -1,4 +1,4 @@
-package main;
+package field;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,5 +29,13 @@ public class FieldManager implements InterfaceField {
 
     public void removeField(InterfaceField field) {
         childFields.remove(field);
+    }
+
+    @Override
+    public String toString() {
+        return "FieldManager{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
