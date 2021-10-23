@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Holds all instances of account through InterfaceAccount
+ * Holds all instances of Account
  */
 public class AccountManager{
 
@@ -31,8 +31,8 @@ public class AccountManager{
     }
 
     /**
-     * Takes an index to the arrayList childAccounts and returns an object of type Account from childAccounts
-     * @param index An index in childAccounts
+     * Takes an index to the ArrayList childAccounts and returns an object of type Account from childAccounts
+     * @param index An index of type int in childAccounts
      * @return An object of type Account from childAccounts
      */
     public Account getAccount(int index) {
@@ -41,7 +41,7 @@ public class AccountManager{
 
     /**
      * Removes an object of type Account from the ArrayList childAccounts
-     * @param index An index in ChildAccounts
+     * @param index An index of type int in ChildAccounts
      */
     public void removeAccount(int index) {
         childAccounts.remove(index-1);

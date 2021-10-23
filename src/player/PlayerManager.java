@@ -43,7 +43,7 @@ public class PlayerManager implements InterfacePlayer {
 
     /**
      * Removes an object of type InterfacePlayer from the ArrayList childPlayer
-     * @param index An index in childPlayers
+     * @param index An index of type int in childPlayers
      */
     public void removePlayer(int index) {
         childPlayers.remove(index);
