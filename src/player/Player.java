@@ -1,26 +1,23 @@
 package player;
 
-import main.Main;
-
 /**
  * Handles the information related to the players
  * @author Kevin s195166
  *
  */
 
-public class Player {
-    private long id;
-    private String name;
+public class Player implements InterfacePlayer{
+    private final long id;
+    private final String name;
 
     public Player(long id, String name) {
         this.id = id;
         this.name = name;
-
-        this.account = new Account(id, Main.START_BALANCE);
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public void getPlayerDetails() {
+
     }
 
     @Override

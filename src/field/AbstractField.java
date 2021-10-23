@@ -16,4 +16,13 @@ public abstract class AbstractField implements InterfaceField {
         System.out.println("Field " + id + " '" + name + "' '" + text + "' " + value);
     }
 
+    @Override
+    public String toString() {
+        return "AbstractField{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", text='" + text + '\'' +
+                ", value=" + value +
+                '}';
+    }
 }

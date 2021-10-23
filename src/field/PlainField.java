@@ -4,9 +4,6 @@ package field;
  * A leaf class from the AbstractField composite in the field composite design pattern
  */
 public class PlainField extends AbstractField {
-    /**
-     * A leaf class from the AbstractField composite in the composite design pattern
-     */
 
     public PlainField(long id, String name, String text, long value) {
         this.id = id;
