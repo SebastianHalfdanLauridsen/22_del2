@@ -21,7 +21,7 @@ public class Account {
     /**
      * Adds or decreases the balance of the player based on the input (positive or negative)
      * @param balance the amount to be added or subtracted from the players account balance
-     * @return        true if the balance was edited
+     * @return true if the balance was edited
      */
     public boolean setBalance(long balance){
 

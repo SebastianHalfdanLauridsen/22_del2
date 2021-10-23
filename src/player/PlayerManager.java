@@ -34,7 +34,8 @@ public class PlayerManager implements InterfacePlayer {
         winning_player = player;
     }
 
-    /** Takes an object of type InterfacePlayer and adds it to the ArrayList childPlayer
+    /**
+     * Takes an object of type InterfacePlayer and adds it to the ArrayList childPlayer
      * @param player An object of type InterfacePlayer
      */
     public void addPlayer(InterfacePlayer player) {

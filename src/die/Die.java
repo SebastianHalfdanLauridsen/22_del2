@@ -8,9 +8,11 @@ import java.lang.Math;
 public class Die {
 
     private int face_value;
+    private final long id;
 
-    public Die(int face_value){
+    public Die(int face_value, long id){
         this.face_value = face_value;
+        this.id = id;
     }
 
     private int random(long min, long max) {
@@ -23,5 +25,17 @@ public class Die {
 
     public void setFaceValue(int value) {
         face_value = value;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Die{" +
+                "face_value=" + face_value +
+                ", id=" + id +
+                '}';
     }
 }

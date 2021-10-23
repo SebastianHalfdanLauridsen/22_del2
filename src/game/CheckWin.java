@@ -1,4 +1,5 @@
 package game;
+
 import main.Main;
 import player.InterfacePlayer;
 import account.AccountManager;

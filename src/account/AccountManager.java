@@ -23,7 +23,8 @@ public class AccountManager{
         childAccounts.forEach(Account::getAccountDetails);
     }
 
-    /** Takes an object of type Account and adds it to the ArrayList childAccount
+    /**
+     * Takes an object of type Account and adds it to the ArrayList childAccount
      * @param account An object of type Account
      */
     public void addAccount(Account account) {

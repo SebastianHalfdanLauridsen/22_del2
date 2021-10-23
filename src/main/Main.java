@@ -11,12 +11,17 @@ import player.InterfacePlayer;
 import player.Player;
 import player.PlayerManager;
 
+import die.DieManager;
+import die.Die;
+
 import game.CheckWin;
 
 public class Main {
 
     public static final long START_BALANCE = 1000;
     public static final long WIN_COND = 3000;
+    public static final long DIE_MIN_VALUE = 1;
+    public static final long DIE_MAX_VALUE = 6;
 
     public static void main(String[] args) {
 
