@@ -80,5 +80,17 @@ public class Main {
         accountManager.getAccount(2).setBalance(0);
         System.out.println(accountManager.getAccount(2).getBalance());
         System.out.println(CheckWin.winCheck(2, accountManager, playerManager));
+
+        Die die1 = new Die(1, 1);
+        Die die2 = new Die(1,2);
+
+        DieManager dieManager = new DieManager(0, "Die Manager");
+        dieManager.addDie(die1);
+        dieManager.addDie(die2);
+
+        dieManager.throwDie();
+        System.out.println(dieManager.getDie(1));
+        System.out.println(dieManager.getDie(2));
+
     }
 }
