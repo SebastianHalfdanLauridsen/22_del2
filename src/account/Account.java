@@ -18,13 +18,25 @@ public class Account {
         System.out.println("Field " + id + " '" + name + "' " + balance);
     }
 
-    @Override
-    public String toString() {
-        return "Account{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", balance=" + balance +
-                '}';
+    /**
+     * Adds or decreases the balance of the player based on the input (positive or negative)
+     * @param balance the amount to be added or subtracted from the players account balance
+     * @return        true if the balance was edited
+     */
+    public boolean setBalance(long balance){
+
+        //If true then no changes has been made
+        if((this.balance == 0 && balance < 0) || balance == 0) {
+            return false;
+        }
+        //If this.balance is going to be negative set balance to 0
+        if(this.balance < (balance * -1)) {
+            this.balance = 0;
+            return true;
+        }
+        //Adds balance to this.balance
+        this.balance += balance;
+        return true;
     }
 
     public long getId() {
@@ -47,24 +59,14 @@ public class Account {
         return balance;
     }
 
-    /**
-     * Adds or decreases the balance of the player based on the input (positive or negative)
-     * @param balance the amount to be added or subtracted from the players account balance
-     * @return        true if the balance was edited
-     */
-    public boolean setBalance(long balance){
-
-        //If true then no changes has been made
-        if((this.balance == 0 && balance < 0) || balance == 0) {
-            return false;
-        }
-        //If this.balance is going to be negative set balance to 0
-        if(this.balance < (balance * -1)) {
-            this.balance = 0;
-            return true;
-        }
-        //Adds balance to this.balance
-        this.balance += balance;
-        return true;
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", balance=" + balance +
+                '}';
     }
+
+
 }

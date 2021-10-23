@@ -10,6 +10,7 @@ public class PlayerManager implements InterfacePlayer {
 
     private final long id;
     private final String name;
+    private InterfacePlayer winning_player;
 
     private final List<InterfacePlayer> childPlayers;
 
@@ -17,6 +18,7 @@ public class PlayerManager implements InterfacePlayer {
         this.id = id;
         this.name = name;
         this.childPlayers = new ArrayList<>();
+        this.winning_player = null;
     }
 
     @Override
@@ -24,11 +26,18 @@ public class PlayerManager implements InterfacePlayer {
         childPlayers.forEach(InterfacePlayer::getPlayerDetails);
     }
 
+    public InterfacePlayer getWinningPlayer() {
+        return winning_player;
+    }
+
+    public void setWinningPlayer(InterfacePlayer player) {
+        winning_player = player;
+    }
 
     /** Takes an object of type InterfacePlayer and adds it to the ArrayList childPlayer
      * @param player An object of type InterfacePlayer
      */
-    public void addPlayer(Player player) {
+    public void addPlayer(InterfacePlayer player) {
         childPlayers.add(player);
     }
 

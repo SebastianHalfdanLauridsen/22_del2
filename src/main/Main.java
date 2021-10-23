@@ -11,6 +11,8 @@ import player.InterfacePlayer;
 import player.Player;
 import player.PlayerManager;
 
+import game.CheckWin;
+
 public class Main {
 
     public static final long START_BALANCE = 1000;
@@ -45,6 +47,9 @@ public class Main {
 
         PlayerManager playerManager = new PlayerManager(0, "Player manager");
 
+        playerManager.addPlayer(player1);
+        playerManager.addPlayer(player2);
+
         //account (could perhaps be shortened dynamically https://stackoverflow.com/questions/13868986/)
         Account account1 = new Account(1, "Player 1 account", START_BALANCE);
         Account account2 = new Account(2, "Player 2 account", START_BALANCE);
@@ -70,9 +75,10 @@ public class Main {
         System.out.println(accountManager.getAccount(1).getBalance());
 
         System.out.println(accountManager.getAccount(2).getBalance());
-        accountManager.getAccount(2).setBalance(-300);
+        accountManager.getAccount(2).setBalance(1999);
         System.out.println(accountManager.getAccount(2).getBalance());
         accountManager.getAccount(2).setBalance(0);
         System.out.println(accountManager.getAccount(2).getBalance());
+        System.out.println(CheckWin.winCheck(2, accountManager, playerManager));
     }
 }

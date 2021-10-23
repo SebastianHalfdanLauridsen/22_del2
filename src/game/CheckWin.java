@@ -21,16 +21,11 @@ public class CheckWin {
      * @param playerManager An object of type PlayerManager
      * @return true if the win condition is less than or equal to the Account's balance
      */
-    public boolean winCheck(int index, AccountManager accountManager, PlayerManager playerManager) {
-        if (Main.WIN_COND <= accountManager.getAccount(index-1).getBalance()) {
-            winning_player = playerManager.getPlayer(index-1);
+    public static boolean winCheck(int index, AccountManager accountManager, PlayerManager playerManager) {
+        if (Main.WIN_COND <= accountManager.getAccount(index).getBalance()) {
+            playerManager.setWinningPlayer(playerManager.getPlayer(index));
             return true;
         }
         return false;
     }
-
-    public InterfacePlayer getWinningPlayer() {
-        return winning_player;
-    }
-
 }
