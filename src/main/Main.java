@@ -14,6 +14,7 @@ import player.PlayerManager;
 public class Main {
 
     public static final long START_BALANCE = 1000;
+    public static final long WIN_COND = 3000;
 
     public static void main(String[] args) {
 
