@@ -5,7 +5,7 @@ import account.AccountManager;
 
 import field.FieldManager;
 import field.InterfaceField;
-import field.PlainField;
+import field.Field;
 
 import player.InterfacePlayer;
 import player.Player;
@@ -18,18 +18,18 @@ public class Main {
     public static void main(String[] args) {
 
         //field
-        InterfaceField field2 = new PlainField(
+        InterfaceField field2 = new Field(
                 2, "Tower", "You climb the tower for its riches and you get them", 250);
-        InterfaceField field3 = new PlainField(
+        InterfaceField field3 = new Field(
                 3, "Crator", "You come across a crater and fall into it, ouch", -100);
-        InterfaceField field4 = new PlainField(
+        InterfaceField field4 = new Field(
                 4, "Palace gates",
                 "You arrive at the foot of the giant Palace gates" +
                         " and are greeted by the Palace maids," +
                         " who hand you gifts",
                 100);
 
-        InterfaceField field7 = new PlainField(
+        InterfaceField field7 = new Field(
                 7, "Monastery",
                 "You come across a monastery, " +
                         "the monks inside feed you and let you sleep in their quarters, " +

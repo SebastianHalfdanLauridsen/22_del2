@@ -53,18 +53,17 @@ public class Account {
      * @return        true if the balance was edited
      */
     public boolean setBalance(long balance){
-        //If balance is negative check if this.balance is going to be negative.
-        //If true set this.balance to 0, if it is already 0 return false
-        if(balance < 0) {
-            if(this.balance <= (balance * -1)) {
-                if(this.balance == 0) {
-                    return false;
-                }
-                this.balance = 0;
-                return true;
-            }
+
+        //If true then no changes has been made
+        if((this.balance == 0 && balance < 0) || balance == 0) {
+            return false;
         }
-        //add or subtract the balance
+        //If this.balance is going to be negative set balance to 0
+        if(this.balance < (balance * -1)) {
+            this.balance = 0;
+            return true;
+        }
+        //Adds balance to this.balance
         this.balance += balance;
         return true;
     }
