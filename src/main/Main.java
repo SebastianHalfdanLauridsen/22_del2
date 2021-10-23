@@ -33,5 +33,17 @@ public class Main {
 
         fieldManager.getFieldDetails();
 
+
+        System.out.println(player1);
+
+        System.out.println(accountManager.getAccount(1).getBalance());
+        accountManager.getAccount(1).setBalance(-100);
+        System.out.println(accountManager.getAccount(1).getBalance());
+
+        System.out.println(accountManager.getAccount(2).getBalance());
+        accountManager.getAccount(2).setBalance(-300);
+        System.out.println(accountManager.getAccount(2).getBalance());
+        accountManager.getAccount(2).setBalance(0);
+        System.out.println(accountManager.getAccount(2).getBalance());
     }
 }
