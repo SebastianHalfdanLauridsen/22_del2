@@ -1,11 +1,9 @@
 package die;
-//TODO make le class:
-// - Make 'random' method.
-// - Make sufficient attributes and their respective get and set methods.
-// - Make a constructor for when we want a new Die.
+import java.lang.Math;
 
 /**
- *
+ * Contains the die's face value
+ * Added random method
  */
 public class Die {
 
