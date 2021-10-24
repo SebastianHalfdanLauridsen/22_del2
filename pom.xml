@@ -4,13 +4,64 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!--Repository for GUI
+    https://github.com/diplomit-dtu/Matador_GUI-->
+    <repositories>
+        <repository>
+            <id>Matador_GUI-repository</id>
+            <url>https://github.com/diplomit-dtu/Matador_GUI/raw/repository</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <groupId>groupId</groupId>
     <artifactId>22_del2</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
 
+        <!--something something test-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--Dependency for GUI-->
+        <dependency>
+            <groupId>diplomitdtu</groupId>
+            <artifactId>matadorgui</artifactId>
+            <version>3.1.7</version>
+        </dependency>
+    </dependencies>
+
+    <!--something something test-->
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
-    
+
+    <!--import gui
+    documentation https://diplomit-dtu.github.io/doc/
+    <repositories>
+        <repository>
+            <id>Matador_GUI-repository</id>
+            <url>https://github.com/diplomit-dtu/Matador_GUI/raw/repository</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>diplomitdtu</groupId>
+            <artifactId>matadorgui</artifactId>
+            <version>3.1.7</version>
+        </dependency>
+    </dependencies>-->
 </project>
