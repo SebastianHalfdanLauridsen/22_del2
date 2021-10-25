@@ -59,11 +59,8 @@ public class PlayerManager implements InterfacePlayer {
         childPlayers.remove(index);
     }
 
-    @Override
-    public String toString() {
-        return "PlayerManager{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+    public static long getAmountOfPlayers() {
+        return childPlayers.size();
     }
+
 }

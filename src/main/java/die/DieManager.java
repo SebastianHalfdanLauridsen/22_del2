@@ -1,10 +1,9 @@
 package die;
-//TODO make le class:
-// - Make throwDie method that actually throws the Die objects and uses the Die's random function.
 
 import java.util.ArrayList;
 import java.util.List;
-import main.Main;
+
+import game.Game;
 
 /**
  * Holds all instances of Die and throws the dies
@@ -13,25 +12,7 @@ public class DieManager {
     private final long id;
     private final String name;
 
-    private final List<Die> childDies;
-
-    public DieManager(long id, String name) {
-        this.id = id;
-        this.name = name;
-        this.childDies = new ArrayList<>();
-    }
-
-    public void addDie(Die die) {
-        childDies.add(die);
-    }
-
-    public Die getDie(int index) {
-        return childDies.get(index-1);
-    }
-
-    public void removeDie(int index) {
-        childDies.remove(index-1);
-    }
+    private static final List<Die> childDies = new ArrayList<>();
 
     /**
      * Throws all dies in the ArrayList childDies and gives them a random face_value
@@ -53,20 +34,20 @@ public class DieManager {
         return (int) ((Math.random() * max) + min);
     }
 
-    public long getId() {
-        return id;
+    public static void addDie(Die die) {
+        childDies.add(die);
     }
 
-    public String getName() {
-        return name;
+    public static Die getDie(int index) {
+        return childDies.get(index-1);
     }
 
-    @Override
-    public String toString() {
-        return "DieManager{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+    public void removeDie(int index) {
+        childDies.remove(index-1);
+    }
+
+    public static int getSum() {
+        return sum;
     }
 
 }
