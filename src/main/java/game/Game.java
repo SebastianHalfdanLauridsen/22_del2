@@ -2,13 +2,17 @@ package game;
 
 import die.Die;
 import die.DieManager;
+
+import player.PlayerManager;
+
 import gui_fields.GUI_Car;
+import gui_fields.GUI_Car.Type;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Street;
 import gui_main.GUI;
-import player.PlayerManager;
 
-import java.awt.*;
+import java.awt.Color;
+import java.util.Random;
 
 /**
  * THE GAME
@@ -69,6 +73,30 @@ public class Game {
             }
             newRound();
             round++;
+        }
+    }
+
+    /**
+     * Generates random cars for each player in the game
+     * @param amount_of_players Runs for loop for amount of players
+     */
+    public void createPlayerCars(int amount_of_players) {
+        String[] patterns = {"FILL", "HORIZONTAL_GRADIANT","DIAGONAL_DUAL_COLOR", "HORIZONTAL_DUAL_COLOR", "HORIZONTAL_LINE", "CHECKERED", "DOTTED", "ZEBRA"};
+        String[] types ={"CAR", "TRACTOR", "RACECAR", "UFO"};
+
+        for(int i = 1; i <= amount_of_players; i++){
+            int randomPattern = new Random().nextInt(patterns.length);
+            int randomType = new Random().nextInt(types.length);
+
+            Color randomColor1 = new Color(new Random().nextFloat(), new Random().nextFloat(), new Random().nextFloat());
+            Color randomColor2 = new Color(new Random().nextFloat(), new Random().nextFloat(), new Random().nextFloat());
+
+            CarManager.createCar(
+                    randomColor1,
+                    randomColor2,
+                    Type.valueOf(types[randomType]),
+                    GUI_Car.Pattern.valueOf(patterns[randomPattern])
+            );
         }
     }
 
