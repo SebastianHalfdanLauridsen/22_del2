@@ -15,10 +15,6 @@ public class Die {
         this.id = id;
     }
 
-    private int random(long min, long max) {
-        return (int) ((Math.random() * max) + min);
-    }
-
     public int getFaceValue() {
         return face_value;
     }

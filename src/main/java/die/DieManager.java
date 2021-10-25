@@ -9,8 +9,8 @@ import game.Game;
  * Holds all instances of Die and throws the dies
  */
 public class DieManager {
-    private final long id;
-    private final String name;
+
+    private static int sum;
 
     private static final List<Die> childDies = new ArrayList<>();
 
@@ -18,9 +18,11 @@ public class DieManager {
      * Throws all dies in the ArrayList childDies and gives them a random face_value
      *  from the const DIE_MIN_VALUE to the const DIE_MAX_VALUE.
      */
-    public void throwDie() {
+    public static void throwDies() {
+        sum = 0;
         for (int index = 1; index < childDies.size()+1 ; index++) {
-            getDie(index).setFaceValue( random(Main.DIE_MIN_VALUE, Main.DIE_MAX_VALUE));
+            getDie(index).setFaceValue( random(Game.DIE_MIN_VALUE, Game.DIE_MAX_VALUE));
+            sum += getDie(index).getFaceValue();
         }
     }
 
@@ -30,7 +32,7 @@ public class DieManager {
      * @param max A long maximum value.
      * @return A random integer between min and max.
      */
-    private int random(long min, long max) {
+    private static int random(long min, long max) {
         return (int) ((Math.random() * max) + min);
     }
 
