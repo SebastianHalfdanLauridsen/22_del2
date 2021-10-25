@@ -17,9 +17,9 @@ public class DieManagerTest {
         Die die1 = new Die(1, 1);
         Die die2 = new Die(1,2);
 
-        DieManager dieManager = new DieManager(0, "Die Manager");
-        dieManager.addDie(die1);
-        dieManager.addDie(die2);
+
+        DieManager.addDie(die1);
+        DieManager.addDie(die2);
 
         dieManager.throwDie();
 
