@@ -49,7 +49,6 @@ public class Game {
     public void playGame() {
         displayScoreboard();
 
-
         while(true) {
             //If WinningPlayer is found announce winner and exit while loop
             if(PlayerManager.getWinningPlayer() != null) {
@@ -222,8 +221,7 @@ public class Game {
             moveCar(index);
 
             //Updates the current player's balance, with the rent of the field
-            int fieldRent = PlayerManager.getStreetFieldRent(currentField);
-            PlayerManager.changePlayerBalance(index,fieldRent);
+            updatePlayerBalance(index);
 
             //Checks if current player's balance is enough to win, if true he wins
             if(playerHasWon(index)) {
@@ -239,6 +237,15 @@ public class Game {
                 index -= 1;
             }
         }
+    }
+
+    /**
+     * Updates the current player's balance, with the rent of the current field
+     * @param player_index players balance to be updated
+     */
+    private void updatePlayerBalance(int player_index){
+        int fieldRent = PlayerManager.getStreetFieldRent(currentField);
+        PlayerManager.changePlayerBalance(player_index,fieldRent);
     }
 
     /**
