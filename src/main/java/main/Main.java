@@ -12,19 +12,7 @@ public class Main {
 
         Game game = new Game(2);
 
-        CarManager.createCar(
-                Color.GREEN,
-                Color.YELLOW,
-                GUI_Car.Type.TRACTOR,
-                GUI_Car.Pattern.HORIZONTAL_LINE
-        );
-
-        CarManager.createCar(
-                Color.MAGENTA,
-                Color.CYAN,
-                GUI_Car.Type.UFO,
-                GUI_Car.Pattern.HORIZONTAL_LINE
-        );
+        game.createPlayerCars(2);
 
         //Create players and add them to PlayerManager
         game.createPlayers(
