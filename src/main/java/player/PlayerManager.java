@@ -11,6 +11,7 @@ import java.util.List;
 import gui_fields.GUI_Street;
 /**
  * Holds all instances of GUI_Player
+ *
  */
 public class PlayerManager {
 

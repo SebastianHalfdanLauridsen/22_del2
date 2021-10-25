@@ -8,6 +8,13 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Contains all instances of CarManager
+ * Constructs car object via createCar
+ * Create car contains all attributes of Car
+ * childCars is for storage and listing of all car objects in the ArrayList
+ */
+
 public class CarManager {
 
     private static List<GUI_Car> childCars = new ArrayList<>();

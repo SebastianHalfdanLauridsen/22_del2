@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * A composite from the InterfaceField component in the field composite design pattern
+ * Works to manage fields in an arraylist
  */
 public class FieldManager implements InterfaceField {
 

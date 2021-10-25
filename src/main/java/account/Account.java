@@ -1,7 +1,7 @@
 package account;
 
 /**
- * Contains a specific player's balance and can manipulate it
+ * Contains a specific player's balance, account name and id. Can manipulate it
  */
 public class Account {
     private long id;

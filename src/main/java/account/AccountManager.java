@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Holds all instances of Account
+ * Holds all instances of Account and inserts them in the childAccounts arraylist
  */
 public class AccountManager{
 

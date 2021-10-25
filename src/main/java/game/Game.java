@@ -75,7 +75,8 @@ public class Game {
 
     //Maybe move to another location?? Maybe Resource Bundle??
     /**
-     * Creates all the fields
+     * Creates all the fields and stores their attributes for use in the game
+     * Utilizes Fieldmannager methods and the GUI_Field Constructor
      */
     private void createFields() {
         fields = new GUI_Field[]{
