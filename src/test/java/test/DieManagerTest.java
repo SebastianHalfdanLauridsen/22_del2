@@ -5,9 +5,6 @@ import die.DieManager;
 import game.Game;
 import main.Main;
 import org.junit.Test;
-import org.w3c.dom.ranges.Range;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -22,7 +19,7 @@ public class DieManagerTest {
         DieManager.addDie(die1);
         DieManager.addDie(die2);
 
-        dieManager.throwDie();
+        DieManager.throwDies();
 
         assertTrue("Die is out of range, die: " + die1.getFaceValue(),
                 Game.DIE_MIN_VALUE <= die1.getFaceValue() && die1.getFaceValue() <= Game.DIE_MAX_VALUE);
