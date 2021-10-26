@@ -349,8 +349,8 @@ public class Game {
 
     /**
      * Adds a player with the given parameters using PlayerManager
-     * @param player_name
-     * @param player_car
+     * @param player_name the name for the player
+     * @param player_car the car for the player
      */
     public void createPlayer(String player_name, GUI_Car player_car) {
         PlayerManager.createPlayer(player_name,START_BALANCE,player_car);
