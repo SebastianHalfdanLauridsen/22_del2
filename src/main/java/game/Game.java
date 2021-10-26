@@ -324,7 +324,7 @@ public class Game {
      * @param player_index players balance to be updated
      */
     private void updatePlayerBalance(int player_index){
-        int fieldRent = PlayerManager.getStreetFieldRent(currentField);
+        int fieldRent = PlayerManager.getFieldRent(currentField);
         PlayerManager.changePlayerBalance(player_index,fieldRent);
     }
 
