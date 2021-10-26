@@ -30,10 +30,10 @@ public class PlayerManager {
     }
 
     /**
-     *
-     * @param name
-     * @param balance
-     * @param car
+     *Creates a player with the following attributes and adds them to childPlayers
+     * @param name Name of the player
+     * @param balance The starting balance for the player
+     * @param car The car object of type GUI_Car for the player
      */
     public static void createPlayer(String name, int balance, GUI_Car car) {
         GUI_Player player = new GUI_Player(name, balance, car);

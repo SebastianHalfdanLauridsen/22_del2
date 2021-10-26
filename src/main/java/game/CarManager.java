@@ -20,7 +20,7 @@ public class CarManager {
     private static List<GUI_Car> childCars = new ArrayList<>();
 
     public static void createCar(Color primary_color, Color pattern_color, GUI_Car.Type vehicle_type, GUI_Car.Pattern paint_pattern) {
-        //add new car with primary color, pattern color, car type and paint pattern as parameters
+        //Add new car with primary color, pattern color, car type and paint pattern as parameters
         GUI_Car car = new GUI_Car(
                 primary_color,
                 pattern_color,
