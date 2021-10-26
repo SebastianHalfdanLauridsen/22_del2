@@ -1,6 +1,5 @@
 package main;
 
-import game.CarManager;
 import game.Game;
 
 
