@@ -102,7 +102,7 @@ public class Game {
     }
 
     /**
-     * Plays the game and handles all rounds
+     * Plays the game
      */
     public void playGame() {
         displayScoreboard();
@@ -157,7 +157,7 @@ public class Game {
     //Maybe move to another location?? Maybe Resource Bundle??
     /**
      * Creates all the fields and stores their attributes for use in the game
-     * Utilizes Fieldmannager methods and the GUI_Field Constructor
+     * Utilizes Fieldmanager methods and the GUI_Field Constructor
      */
     private void createFields() {
         fields = new GUI_Field[]{
@@ -286,7 +286,7 @@ public class Game {
      * Then moves the current player's car to the field the dice have chosen
      * Updates the current player's balance, with the rent of the field
      * Checks if current player's balance is enough to win, if true he wins
-     * Check if field is an extra turn field, gives current player an extra turn if true
+     * Checks if field is an extra turn field, gives current player an extra turn if true
      */
     public void newRound() {
         //all in this while loop should have its own (or multiple) methods so that the JUnit test can be made.
@@ -373,12 +373,12 @@ public class Game {
      */
     private void displayDice(int position) {
         gui.setDice(
-                DieManager.getDie(1).getFaceValue(),
-                position,
-                2,
-                DieManager.getDie(2).getFaceValue(),
-                position + 1,
-                2
+            DieManager.getDie(1).getFaceValue(),
+            position,
+            2,
+            DieManager.getDie(2).getFaceValue(),
+            position + 1,
+            2
         );
     }
 
