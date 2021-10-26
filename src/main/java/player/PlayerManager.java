@@ -68,9 +68,9 @@ public class PlayerManager {
         return true;
     }
 
-    public static int getStreetFieldRent(int index) {
-        GUI_Street street = (GUI_Street) Game.getGUI().getFields()[index];
-        return Integer.parseInt(street.getRent());
+    public static int getFieldRent(int index) {
+        GUI_Brewery field = (GUI_Brewery) Game.getGUI().getFields()[index];
+        return Integer.parseInt(field.getRent());
     }
 
     /**

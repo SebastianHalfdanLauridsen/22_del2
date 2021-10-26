@@ -3,6 +3,7 @@ package game;
 import die.Die;
 import die.DieManager;
 
+import gui_fields.GUI_Brewery;
 import player.PlayerManager;
 
 import gui_fields.GUI_Car;
@@ -170,17 +171,17 @@ public class Game {
                         Color.black
                 ),
                 //Field 2
-                new GUI_Street(
+                new GUI_Brewery("src/main/java/game_resources/tower.png",
                         "Tower",
                         "+250",
                         "You climb the tower for its riches" +
-                                " and you get them",
+                                " and get safely down",
                         "-250",
                         Color.LIGHT_GRAY,
                         Color.black
                 ),
                 //Field 3
-                new GUI_Street(
+                new GUI_Brewery("src/main/java/game_resources/crater.png",
                         "Crater",
                         "-100",
                         "You come across a crater" +
@@ -190,7 +191,7 @@ public class Game {
                         Color.black
                 ),
                 //Field 4 Palace gates
-                new GUI_Street(
+                new GUI_Brewery("src/main/java/game_resources/palace_gates.png",
                         "Palace gates",
                         "+100",
                         "You arrive at the Palace gates" +
@@ -201,7 +202,7 @@ public class Game {
                         Color.black
                 ),
                 //Field 5 Cold desert
-                new GUI_Street(
+                new GUI_Brewery("src/main/java/game_resources/cold_desert.png",
                         "Cold desert",
                         "-20",
                         "The cold of the desert seeps into your bones " +
@@ -211,7 +212,7 @@ public class Game {
                         Color.black
                 ),
                 //Field 6 Walled city
-                new GUI_Street(
+                new GUI_Brewery("src/main/java/game_resources/walled_city.png",
                         "Walled city",
                         "+180",
                         "You climbed over the wall ruins " +
@@ -221,7 +222,7 @@ public class Game {
                         Color.black
                 ),
                 //Field 7 Monastery
-                new GUI_Street(
+                new GUI_Brewery("src/main/java/game_resources/monastery.png",
                         "Monastery",
                         "0",
                         "The monks in the Monastery take you in and feed you, " +
@@ -231,7 +232,7 @@ public class Game {
                         Color.black
                 ),
                 //Field 8 Black cave
-                new GUI_Street(
+                new GUI_Brewery("src/main/java/game_resources/black_cave.png",
                         "Black cave",
                         "-70",
                         "You wander into the Black cave" +
@@ -242,7 +243,7 @@ public class Game {
                         Color.black
                 ),
                 //Field 9 Huts in the mountain
-                new GUI_Street(
+                new GUI_Brewery("src/main/java/game_resources/huts_in_the_mountain.png",
                         "Huts in the mountain",
                         "+60",
                         "You climb the tower for its riches and you get them",
@@ -251,7 +252,7 @@ public class Game {
                         Color.black
                 ),
                 //Field 10 The Werewall
-                new GUI_Street(
+                new GUI_Brewery("src/main/java/game_resources/the_werewall.png",
                         "The Werewall",
                         "-80",
                         "You climb the tower for its riches and you get them - You also get an extra turn",
@@ -260,7 +261,7 @@ public class Game {
                         Color.black
                 ),
                 //Field 11 The pit
-                new GUI_Street(
+                new GUI_Brewery("src/main/java/game_resources/the_pit.png",
                         "The pit",
                         "-50",
                         "You come across a pit and fall into it, oof",
@@ -269,7 +270,7 @@ public class Game {
                         Color.black
                 ),
                 //Field 12 Goldmine
-                new GUI_Street(
+                new GUI_Brewery("src/main/java/game_resources/goldmine.png",
                         "Goldmine",
                         "+650",
                         "You've come across a goldmine, jackpot",
