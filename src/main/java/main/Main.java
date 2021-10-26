@@ -12,15 +12,7 @@ public class Main {
 
         Game game = new Game(2);
 
-        game.createPlayerCars(2);
 
-        //Create players and add them to PlayerManager
-        game.createPlayers(
-                "Slange",
-                "Kevse",
-                CarManager.getCar(1),
-                CarManager.getCar(2)
-        );
 
         game.playGame();
         System.exit(0);
