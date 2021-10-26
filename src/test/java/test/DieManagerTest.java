@@ -14,6 +14,23 @@ import static org.junit.Assert.*;
 
 public class DieManagerTest {
 
+    //variables
+    final int rounds = 10000;
+    final double acceptedError = 0.01;
+
+    //constants
+    final int DIE_AMOUNT = 2;
+    final int DIE_SIDES = 6;
+    final double COMBINATION_TOTAL = Math.pow(DIE_SIDES, DIE_AMOUNT);
+    final int POSSIBLE_SUMS = DIE_AMOUNT * DIE_SIDES -(DIE_AMOUNT -1);
+
+    //fills sumAmount with 0
+    ArrayList<Integer> sumAmount = new ArrayList<>(Collections.nCopies(POSSIBLE_SUMS, 0));
+
+    ArrayList<Double> theoreticalPercentage = new ArrayList<>();
+    ArrayList<Double> sumPercentage = new ArrayList<>();
+    ArrayList<Double> difference = new ArrayList<>();
+
     /**
      * Tests if the throwDie method satisfies the parameters of the minimum and maximum die value allowed
      */
