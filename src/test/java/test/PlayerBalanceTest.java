@@ -1,7 +1,5 @@
 package test;
 
-import account.Account;
-import account.AccountManager;
 import game.CarManager;
 import game.Game;
 import gui_fields.GUI_Car;
@@ -14,9 +12,11 @@ import static org.junit.Assert.*;
 
 public class PlayerBalanceTest {
 
+    /**
+     * Tests if the players' balance can never go below zero
+     */
     @Test
     public void changePlayerBalance() {
-
 
         Game game = new Game();
 
@@ -69,8 +69,5 @@ public class PlayerBalanceTest {
 
         assertEquals(Integer.MAX_VALUE,PlayerManager.getPlayer(1).getBalance());
         assertEquals(0,PlayerManager.getPlayer(2).getBalance());
-
-
-
     }
 }

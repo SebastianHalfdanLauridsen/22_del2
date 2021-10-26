@@ -27,7 +27,7 @@ public class CarManager {
                 vehicle_type,
                 paint_pattern
         );
-        //add the car to the CarManager list
+        //Add the car to the CarManager ArrayList
         CarManager.addCar(car);
 
     }

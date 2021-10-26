@@ -42,7 +42,8 @@ public class PlayerManager {
 
     /**
      * Adds or decreases the balance of the player based on the input (positive or negative)
-     * @param player_index The index of the player that is paying rent
+     * @param player_index The index of the player that is paying og getting rent
+     * @param rent The amount of rent to be given from the field
      * @return true if the balance was edited, false if otherwise
      */
     public static boolean changePlayerBalance(int player_index, int rent) {

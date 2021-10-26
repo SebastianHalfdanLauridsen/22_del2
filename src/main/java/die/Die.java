@@ -10,6 +10,11 @@ public class Die {
     private int face_value;
     private final long id;
 
+    /**
+     * Creates a die with a face value and an ID
+     * @param face_value is the value of the die
+     * @param id used to refer to the specified die
+     */
     public Die(int face_value, long id){
         this.face_value = face_value;
         this.id = id;

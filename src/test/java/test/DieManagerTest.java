@@ -2,8 +2,9 @@ package test;
 
 import die.Die;
 import die.DieManager;
+
 import game.Game;
-import main.Main;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;

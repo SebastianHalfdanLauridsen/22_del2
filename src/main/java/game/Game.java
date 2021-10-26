@@ -12,6 +12,7 @@ import gui_fields.GUI_Street;
 import gui_main.GUI;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -29,6 +30,10 @@ public class Game {
     private int round = 0;
     private static int currentField;
 
+    public Game(){
+        gui = new GUI();
+    }
+
     /**
      * Creates GUI and calls all the fields, then adds dies to DieManager
      * @param dies The amount of dies to be used in the game
@@ -43,12 +48,9 @@ public class Game {
             DieManager.addDie(die);
         }
     }
-    public Game(){
-        gui = new GUI();
-    }
 
     /**
-     * plays the game
+     * Plays the game and handles all rounds
      */
     public void playGame() {
         displayScoreboard();
@@ -257,9 +259,6 @@ public class Game {
                 break;
             }
 
-                //Souts information about the roll
-                //System.out.println("Player " + index + " rolled: " + (DieManager.getSum()) + "\n" + street.getDescription() + "\nBalance change: " + Integer.parseInt(street.getRent()) *-1);
-
             //If the current field is The Werewall (field 10)
             // then the next index in the for loop will be the current index
             if(fieldIsExtraTurn()) {
@@ -298,17 +297,14 @@ public class Game {
 
     /**
      * Adds a player with the given parameters using PlayerManager
-     * @param player1_name Name for the first player
-     * @param player2_name Name for the second Player
-     * @param player1_car The first players car
-     * @param player2_car The second players car
+     * @param player_name
+     * @param player_car
      */
     public void createPlayers(String player1_name, String player2_name, GUI_Car player1_car, GUI_Car player2_car) {
         PlayerManager.createPlayer(player1_name,START_BALANCE,player1_car);
         PlayerManager.createPlayer(player2_name,START_BALANCE,player2_car);
     }
 
-    //maybe split into 2 and rename
     /**
      * Displays the scoreboard and also the players on start
      */
