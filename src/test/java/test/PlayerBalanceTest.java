@@ -35,13 +35,14 @@ public class PlayerBalanceTest {
         );
 
         //Create players and add them to PlayerManager
-        game.createPlayers(
+        game.createPlayer(
                 "Slange",
+                CarManager.getCar(1)
+        );
+        game.createPlayer(
                 "Kevse",
-                CarManager.getCar(1),
                 CarManager.getCar(2)
         );
-
 
         //Tester to see if a change is made
         if (!PlayerManager.changePlayerBalance(1, 0)){
