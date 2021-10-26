@@ -3,7 +3,6 @@ package main;
 import game.CarManager;
 import game.Game;
 
-import java.awt.*;
 
 import gui_fields.GUI_Car;
 public class Main {
