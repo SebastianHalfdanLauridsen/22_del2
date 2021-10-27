@@ -109,12 +109,12 @@ public class PlayerManager {
         //variables to help make code nice B)
         int currBalance = PlayerManager.getPlayer(player_index).getBalance();
 
-
         //Check to see if balance is unchanged
         //if currBalance is 0 AND rent is more than 0 OR rent is 0, return false
         if((currBalance == 0 && rent > 0) || rent == 0){
             return false;
         }
+
         //Check to see if balance is going to be minus, if true set balance to 0
         if((currBalance - rent) < 0){
             PlayerManager.getPlayer(player_index).setBalance(0);

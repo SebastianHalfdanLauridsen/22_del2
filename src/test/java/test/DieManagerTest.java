@@ -40,11 +40,9 @@ public class DieManagerTest {
         System.out.println("Number of possible combinations with " + DIE_AMOUNT + " dies with " + DIE_SIDES + " sides: " + COMBINATION_TOTAL);
         System.out.println("Number of possible sums with " + DIE_AMOUNT + " dies with " + DIE_SIDES + " sides: " + POSSIBLE_SUMS);
 
-        //create dice and adds them to DieManager's ArrayList
-        for (int i = 1; i <= DIE_AMOUNT; i++){
-            Die die = new Die(1, i);
-            DieManager.addDie(die);
-        }
+        //create dies and adds them to DieManager's ArrayList
+        DieManager.createDies(DIE_AMOUNT);
+
         //run tests
         diceTest();
         theoryTest();
@@ -138,8 +136,7 @@ public class DieManagerTest {
         for(int i = 1; i <= sumAmount.size(); i++) {
             //If 'i' is bigger than half of the size of the sumAmount, we count down
             if (i > Math.ceil((double)sumAmount.size()/2)){
-                theoreticalPercentage.add(((i - counter)/ COMBINATION_TOTAL));
-                counter += 2;
+                theoreticalPercentage.add( ( ((sumAmount.size() + 1) - i)/ COMBINATION_TOTAL) );
             } else { //Else we count up
                 theoreticalPercentage.add(i / COMBINATION_TOTAL);
             }

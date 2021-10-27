@@ -68,12 +68,14 @@ public class Game {
                                 + PlayerManager.getWinningPlayer().getName()
                                 + " with the balance: "
                                 + PlayerManager.getWinningPlayer().getBalance()
+                                + ", it took " + round + " rounds"
                 );
                 gui.showMessage(
                         "A winner has been found: "
                                 + PlayerManager.getWinningPlayer().getName()
                                 + " with the balance: "
                                 + PlayerManager.getWinningPlayer().getBalance()
+                                + ", it took " + round + " rounds"
                 );
                 //Exits program after winner is found
                 break;
