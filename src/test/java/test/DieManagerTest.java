@@ -122,14 +122,19 @@ public class DieManagerTest {
     }
 
     /**
-     * Fills theoryPercentage with the theoretical possibility of throwing two dice
-     * 'i' is the amount of possibilites for the sum 2, 3, 4...
-     * We use (i - counter) after half the array has been counted through and then we count down
-     * Therefore after the next iteration (i++),
-     *  'counter' is subtracted and we step 2 down so this iteration is actually i--
+     * Fills theoryPercentage with the theoretical possibilities of throwing two dice
      */
     public void theoreticalArrayFiller() {
-        int counter = 2;
+        // 'i' is the amount of possible sums
+        // We use ((sumAmount.size()+1)-i) after half the array has been counted through to count down
+        // Therefore after the next iteration (i++),
+        // So for 2 dice [sumAmount.size()=11]
+        // we first count up to 6
+        // and after 6, 7 is bigger than half of the ArrayList [(i>Math.ceil(sumAmount.size()/2)=TRUE]
+        // then we count down with (sumAmount.size()+1)-i
+        // ex. sumAmount=11, i=7: (11+1)-7=5
+        // and the next ex. sumAmount=11, i=8: (11+1)-8 = 4
+        // etc.
         for(int i = 1; i <= sumAmount.size(); i++) {
             //If 'i' is bigger than half of the size of the sumAmount, we count down
             if (i > Math.ceil((double)sumAmount.size()/2)){
