@@ -167,8 +167,8 @@ public final class Game {
                 new GUI_Brewery("src/main/java/game_resources/walled_city.png",
                         "Walled city",
                         "+180",
-                        "You climbed over the wall ruins " +
-                                "and find gems",
+                        "You climb over the wall ruins " +
+                                "and find gems never seen before",
                         "-180",
                         Color.LIGHT_GRAY,
                         Color.black
@@ -189,7 +189,7 @@ public final class Game {
                         "-70",
                         "You wander into the Black cave" +
                                 " and a vampire sneaks his hands into your pockets," +
-                                " stealing some coin",
+                                " stealing some coins",
                         "70",
                         Color.LIGHT_GRAY,
                         Color.black
@@ -198,7 +198,8 @@ public final class Game {
                 new GUI_Brewery("src/main/java/game_resources/huts_in_the_mountain.png",
                         "Huts in the mountain",
                         "+60",
-                        "You climb the tower for its riches and you get them",
+                        "You hike the mountains and come across a small hut, " +
+                                "the residents invite you in and give you coins and food for your continued journey",
                         "-60",
                         Color.LIGHT_GRAY,
                         Color.black
@@ -207,7 +208,8 @@ public final class Game {
                 new GUI_Brewery("src/main/java/game_resources/the_werewall.png",
                         "The Werewall",
                         "-80",
-                        "You climb the tower for its riches and you get them - You also get an extra turn",
+                        "Before you is a great wall of pure flesh, " +
+                                "it demands payment, but offers an extra throw in return",
                         "80",
                         Color.LIGHT_GRAY,
                         Color.black
