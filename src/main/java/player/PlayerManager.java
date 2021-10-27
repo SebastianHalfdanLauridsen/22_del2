@@ -1,14 +1,12 @@
 package player;
 
 import gui_fields.*;
-import gui_main.GUI;
 
 import game.Game;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import gui_fields.GUI_Street;
 /**
  * Holds all instances of GUI_Player, fetches player names and adds them to the GUI
  */
@@ -62,7 +60,7 @@ public class PlayerManager {
      * @param input the name of the user
      * @return true if name is already in array, false if not
      */
-    private static boolean playerNameTaken(String input){
+    private static boolean playerNameTakenAlert(String input){
         for (int j = 0; j < playerNames.size() - 1; j++) {
             //if this name input is equal to one of the previously recorded names, alert player
             if(input.equals(playerNames.get(j))) {

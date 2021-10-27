@@ -2,7 +2,7 @@ package game;
 
 import gui_fields.GUI_Car;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 

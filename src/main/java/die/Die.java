@@ -1,5 +1,4 @@
 package die;
-import java.lang.Math;
 
 /**
  * Contains the die's face value

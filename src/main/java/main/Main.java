@@ -2,9 +2,6 @@ package main;
 
 import game.Game;
 
-
-import gui_fields.GUI_Car;
-
 /**
  * Runs game and exits when the game is finished
  */

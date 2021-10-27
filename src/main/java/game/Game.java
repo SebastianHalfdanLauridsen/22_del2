@@ -1,24 +1,22 @@
 package game;
 
 import die.DieManager;
-
-import gui_fields.GUI_Brewery;
 import player.PlayerManager;
 
+import gui_main.GUI;
 import gui_fields.GUI_Car;
 import gui_fields.GUI_Car.Type;
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Brewery;
 import gui_fields.GUI_Street;
-import gui_main.GUI;
 
 import java.awt.Color;
-import java.util.ArrayList;
 import java.util.Random;
 
 /**
  * THE GAME
  */
-public class Game {
+public final class Game {
 
     private static final int START_BALANCE = 1000;
     private static final int WIN_COND = 3000;
@@ -289,6 +287,7 @@ public class Game {
     private boolean fieldIsExtraTurn() {
         return gui.getFields()[currentField] == gui.getFields()[10 - 1];
     }
+
     /**
      * Checks if current player's balance is enough to win
      * @return Returns true if player has won, false otherwise
