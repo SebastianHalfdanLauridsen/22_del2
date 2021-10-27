@@ -17,7 +17,7 @@ public class PlayerManager {
     private static final List<GUI_Player> childPlayers = new ArrayList<>();
 
     private static int amount_of_players;
-    private static ArrayList<String> playerNames = new ArrayList<>();
+    private static final ArrayList<String> playerNames = new ArrayList<>();
 
     /**
      * Welcomes the player and lets them input their names
@@ -83,7 +83,6 @@ public class PlayerManager {
             return true;
         }
         return false;
-
     }
 
     /**
