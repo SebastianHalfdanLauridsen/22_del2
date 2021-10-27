@@ -36,6 +36,18 @@ public class DieManager {
         return (int) ((Math.random() * max) + min);
     }
 
+
+    /**
+     * Creates instances of Die and adds them to the ArrayList childDies
+     * @param diesAmount the amount of dies to be instantiated
+     */
+    public static void createDies(int diesAmount) {
+        for (int i = 1; i <= diesAmount; i++) {
+            Die die = new Die(0, i);
+            childDies.add(die);
+        }
+    }
+
     public static void addDie(Die die) {
         childDies.add(die);
     }

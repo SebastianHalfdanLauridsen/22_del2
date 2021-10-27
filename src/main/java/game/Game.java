@@ -35,8 +35,6 @@ public class Game {
         gui = new GUI();
     }
 
-    //TODO
-    // - split into more methods
     /**
      * Creates GUI and calls all the fields, then adds dies to DieManager
      * @param dies The amount of dies to be used in the game
@@ -46,59 +44,16 @@ public class Game {
         createFields();
         gui = new GUI(fields);
 
-        //something something starting of the game
-        getGUI().showMessage("Welcome to the game!");
-        int amount_of_players = getGUI().getUserInteger("Enter the amount of players (between 2 and 6):",2, 6);
+        PlayerManager.initiatePlayers();
 
-        ArrayList<String> playerNames = new ArrayList<>();
-        String[] ordinal = {"first", "second", "third", "fourth", "fifth", "sixth"};
-        for(int currentPlayer = 1; currentPlayer <= amount_of_players; currentPlayer++) {
-            //ask the player to input their name and save to player_name_input
-            String player_name_input = getGUI().getUserString("Enter the " + ordinal[currentPlayer-1] + " player's name:");
+        createPlayerCars(PlayerManager.getAmountOfPlayers());
 
-            //if the inpput name is an empty String
-            if(player_name_input.equals("")) {
-                //alert the player that a name cannot be empty an empty String
-                getGUI().showMessage("You must enter a name!");
-
-                //let the player input their name again and skip to next iteration
-                currentPlayer--;
-                continue;
-            }
-
-            //add the player's input name to playerNames ArrayList
-            playerNames.add(player_name_input);
-
-            //if more that 0 players have entered a name
-            if(currentPlayer >= 2) {
-                //cycle through all previous player's inputs
-                for(int j = 0; j < playerNames.size()-1; j++) {
-                    //if this name input is equal to one of the previously recorded names
-                    if(player_name_input.equals(playerNames.get(j))) {
-                        //Alert the player that sharing a name is not possible
-                        getGUI().showMessage("Players cannot share the same name!");
-                        //remove their name from the ArrayList
-                        playerNames.remove(currentPlayer-1);
-                        //let the player input their name again
-                        currentPlayer--;
-                        //break out of this for loop because at least 1 name in the list was equal to the name input
-                        break; //break1
-                    }
-                }
-                //break1
-            }
-        }
-        createPlayerCars(amount_of_players);
-
-        for(int i = 1; i <= amount_of_players; i++) {
-            createPlayer(playerNames.get(i-1), CarManager.getCar(i));
+        //adds the players to the GUI
+        for(int i = 1; i <= PlayerManager.getAmountOfPlayers(); i++) {
+            createPlayer(PlayerManager.getPlayerNames().get(i-1), CarManager.getCar(i));
         }
 
-        //make create dies function in DieManager
-        for(int i = 1; i <= dies; i++) {
-            Die die = new Die(0, i);
-            DieManager.addDie(die);
-        }
+        DieManager.createDies(dies);
     }
 
     /**

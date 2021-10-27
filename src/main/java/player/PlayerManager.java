@@ -19,14 +19,74 @@ public class PlayerManager {
 
     private static final List<GUI_Player> childPlayers = new ArrayList<>();
 
+    private static int amount_of_players;
+    private static ArrayList<String> playerNames = new ArrayList<>();
 
+    /**
+     * Welcomes the player and lets them input their names
+     */
+    public static void initiatePlayers() {
+        //welcome the player and let them input how many players will play
+        Game.getGUI().showMessage("Welcome to the game!");
+        amount_of_players = Game.getGUI().getUserInteger("Enter the amount of players (between 2 and 6):", 2, 6);
 
-    public static GUI_Player getWinningPlayer() {
-        return winning_player;
+        String[] ordinal = {"first", "second", "third", "fourth", "fifth", "sixth"};
+
+        //loops through the amount of players who must enter their name, checks to see if they are valid inputs
+        //  and adds them to the ArrayList playerNames
+        for (int currentPlayer = 1; currentPlayer <= amount_of_players; currentPlayer++) {
+            //ask the player to input their name and save to player_name_input
+            String player_name_input = Game.getGUI().getUserString(
+                    "Enter the " + ordinal[currentPlayer - 1] + " player's name:"
+            );
+
+            //if the inpput name is an empty String alert the player and let them input again
+            if(inputIsEmptyAlert(player_name_input)) {
+                currentPlayer--;
+                continue;
+            }
+
+            //add the player's input name to playerNames ArrayList
+            playerNames.add(player_name_input);
+
+            //if more than 1 player have entered a name and the name is in use
+            //remove their input from the ArrayList and let them input their name again
+            if (currentPlayer >= 2 && playerNameTaken(player_name_input)) {
+                playerNames.remove(currentPlayer - 1);
+                currentPlayer--;
+            }
+        }
     }
 
-    public static void setWinningPlayer(GUI_Player player) {
-        winning_player = player;
+    /**
+     * Checks if user input is already in the array
+     * @param input the name of the user
+     * @return true if name is already in array, false if not
+     */
+    private static boolean playerNameTaken(String input){
+        for (int j = 0; j < playerNames.size() - 1; j++) {
+            //if this name input is equal to one of the previously recorded names, alert player
+            if(input.equals(playerNames.get(j))) {
+                Game.getGUI().showMessage("Players cannot share the same name!");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Checks if user input is empty
+     * @param input the name of the user
+     * @return true if the name is empty, false if not
+     */
+    private static boolean inputIsEmptyAlert(String input) {
+        if ("".equals(input)) {
+            //Alert the player that a name cannot be empty
+            Game.getGUI().showMessage("You must enter a name!");
+            return true;
+        }
+        return false;
+
     }
 
     /**
@@ -77,7 +137,7 @@ public class PlayerManager {
      * Takes an object of type GUI_Player and adds it to the ArrayList childPlayer
      * @param player An object of type GUI_Player
      */
-    public static void addPlayer(GUI_Player player) {
+    private static void addPlayer(GUI_Player player) {
         childPlayers.add(player);
     }
 
@@ -98,8 +158,19 @@ public class PlayerManager {
         childPlayers.remove(index);
     }
 
-    public static long getAmountOfPlayers() {
-        return childPlayers.size();
+    public static ArrayList<String> getPlayerNames() {
+        return playerNames;
     }
 
+    public static int getAmountOfPlayers() {
+        return amount_of_players;
+    }
+
+    public static GUI_Player getWinningPlayer() {
+        return winning_player;
+    }
+
+    public static void setWinningPlayer(GUI_Player player) {
+        winning_player = player;
+    }
 }
