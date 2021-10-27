@@ -13,9 +13,7 @@ import java.util.List;
 public class PlayerManager {
 
     private static GUI_Player winning_player;
-
     private static final List<GUI_Player> childPlayers = new ArrayList<>();
-
     private static int amount_of_players;
     private static final ArrayList<String> playerNames = new ArrayList<>();
 
@@ -48,7 +46,7 @@ public class PlayerManager {
 
             //if more than 1 player have entered a name and the name is in use
             //remove their input from the ArrayList and let them input their name again
-            if (currentPlayer >= 2 && playerNameTaken(player_name_input)) {
+            if (currentPlayer > 1 && playerNameTakenAlert(player_name_input)) {
                 playerNames.remove(currentPlayer - 1);
                 currentPlayer--;
             }
@@ -63,7 +61,7 @@ public class PlayerManager {
     private static boolean playerNameTakenAlert(String input){
         for (int j = 0; j < playerNames.size() - 1; j++) {
             //if this name input is equal to one of the previously recorded names, alert player
-            if(input.equals(playerNames.get(j))) {
+            if(input.equalsIgnoreCase(playerNames.get(j))) {
                 Game.getGUI().showMessage("Players cannot share the same name!");
                 return true;
             }
@@ -77,7 +75,7 @@ public class PlayerManager {
      * @return true if the name is empty, false if not
      */
     private static boolean inputIsEmptyAlert(String input) {
-        if ("".equals(input)) {
+        if (input.isBlank()) {
             //Alert the player that a name cannot be empty
             Game.getGUI().showMessage("You must enter a name!");
             return true;
