@@ -1,6 +1,5 @@
 package game;
 
-import die.Die;
 import die.DieManager;
 
 import gui_fields.GUI_Brewery;
@@ -40,7 +39,6 @@ public class Game {
      * @param dies The amount of dies to be used in the game
      */
     public Game(int dies) {
-        //creates all fields
         createFields();
         gui = new GUI(fields);
 
@@ -57,7 +55,7 @@ public class Game {
     }
 
     /**
-     * Plays the game
+     * Plays the game by running the rounds and testing if a winner has been found
      */
     public void playGame() {
         displayScoreboard();
@@ -109,7 +107,6 @@ public class Game {
         }
     }
 
-    //Maybe move to another location?? Maybe Resource Bundle??
     /**
      * Creates all the fields and stores their attributes for use in the game
      * Utilizes Fieldmanager methods and the GUI_Field Constructor

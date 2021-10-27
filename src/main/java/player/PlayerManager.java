@@ -10,8 +10,7 @@ import java.util.List;
 
 import gui_fields.GUI_Street;
 /**
- * Holds all instances of GUI_Player
- *
+ * Holds all instances of GUI_Player, fetches player names and adds them to the GUI
  */
 public class PlayerManager {
 
@@ -107,8 +106,6 @@ public class PlayerManager {
      * @return true if the balance was edited, false if otherwise
      */
     public static boolean changePlayerBalance(int player_index, int rent) {
-        //parse the field that has been landed on to GUI_Street
-
         //variables to help make code nice B)
         int currBalance = PlayerManager.getPlayer(player_index).getBalance();
 
@@ -128,6 +125,11 @@ public class PlayerManager {
         return true;
     }
 
+    /**
+     * Takes an index to array for fields and returns its rent
+     * @param index An object of type field
+     * @return the rent of the field
+     */
     public static int getFieldRent(int index) {
         GUI_Brewery field = (GUI_Brewery) Game.getGUI().getFields()[index];
         return Integer.parseInt(field.getRent());

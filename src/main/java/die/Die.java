@@ -3,7 +3,6 @@ import java.lang.Math;
 
 /**
  * Contains the die's face value
- * Added random method
  */
 public class Die {
 

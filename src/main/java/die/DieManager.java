@@ -11,7 +11,6 @@ import game.Game;
 public class DieManager {
 
     private static int sum;
-
     private static final List<Die> childDies = new ArrayList<>();
 
     /**
@@ -56,7 +55,7 @@ public class DieManager {
         return childDies.get(index-1);
     }
 
-    public void removeDie(int index) {
+    public static void removeDie(int index) {
         childDies.remove(index-1);
     }
 
