@@ -2,6 +2,7 @@ package test;
 
 import die.Die;
 import die.DieManager;
+import player.PlayerManager;
 
 import game.Game;
 
@@ -17,6 +18,7 @@ public class DieManagerTest {
     //variables
     final int rounds = 10000;
     final double acceptedError = 0.01;
+    final int dieTestThrows = 1000;
 
     //constants
     final int DIE_AMOUNT = 2;
@@ -30,6 +32,11 @@ public class DieManagerTest {
     ArrayList<Double> theoreticalPercentage = new ArrayList<>();
     ArrayList<Double> sumPercentage = new ArrayList<>();
     ArrayList<Double> difference = new ArrayList<>();
+
+    ArrayList<Double> meanValueTheory = new ArrayList<>();
+    ArrayList<Integer> meanValueSums = new ArrayList<>();
+    int[] fieldValue = {250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
+
 
     /**
      * Tests if the throwDie method satisfies the parameters of the minimum and maximum die value allowed
@@ -46,20 +53,24 @@ public class DieManagerTest {
         //run tests
         diceTest();
         theoryTest();
+        meanValueTest();
+
     }
+
 
     /**
      * Throws the amount of dies and asserts that they are within the given values
      */
-    public void diceTest(){
-        //roll the dice
-        DieManager.throwDies();
-
-        //determine if the face value of the dice is between the minimum allowed and the maximum allowed
-        for (int i = 1; i <= DIE_AMOUNT; i++){
-            int faceValue = DieManager.getDie(i).getFaceValue();
-            assertTrue("Die is out of range, die: " + faceValue,
-                    Game.DIE_MIN_VALUE <= faceValue && faceValue <= Game.DIE_MAX_VALUE);
+    public void diceTest() {
+        for (int i = 0; i < dieTestThrows; i++) {
+            //roll the dice for dieTestThrow amount
+            DieManager.throwDies();
+            //determine if the face value of the dice is between the minimum allowed and the maximum allowed
+            for (int j = 1; j <= DIE_AMOUNT; j++) {
+                int faceValue = DieManager.getDie(j).getFaceValue();
+                assertTrue("Die is out of range, die: " + faceValue,
+                        Game.DIE_MIN_VALUE <= faceValue && faceValue <= Game.DIE_MAX_VALUE);
+            }
         }
     }
 
@@ -165,5 +176,28 @@ public class DieManagerTest {
                     " difference is " + difference.get(i), difference.get(i) < acceptedError);
             System.out.println("sum " + (i + 2) + " passed the test");
         }
+    }
+
+    /**
+     * Calculates the meanValue using the value of each field times how many times it was landed on
+     */
+    public void meanValueTest(){
+        double sum1 = 0, sum2 = 0;
+
+        for (int i = 0; i < sumAmount.size(); i++){
+            meanValueSums.add(sumAmount.get(i) * fieldValue[i]);
+            meanValueTheory.add(theoreticalPercentage.get(i) * fieldValue[i]);
+        }
+
+        for (int i = 0; i < sumAmount.size(); i++){
+            sum1 = meanValueSums.get(i) + sum1;
+            sum2 = meanValueTheory.get(i) + sum2;
+        }
+
+
+        System.out.println("\n\nMean value for sumAmount: " + (sum1/rounds));
+        System.out.println("Mean value for theory:    " + sum2);
+        System.out.println("Average rounds played:    " + (2000/(sum1/rounds)));
+        System.out.println("Average rounds theory:    " + (2000/sum2));
     }
 }
