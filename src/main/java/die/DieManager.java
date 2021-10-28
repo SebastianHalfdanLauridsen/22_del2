@@ -35,7 +35,6 @@ public class DieManager {
         return (int) ((Math.random() * max) + min);
     }
 
-
     /**
      * Creates instances of Die and adds them to the ArrayList childDies
      * @param diesAmount the amount of dies to be instantiated
@@ -47,18 +46,9 @@ public class DieManager {
         }
     }
 
-    public static void addDie(Die die) {
-        childDies.add(die);
-    }
-
     public static Die getDie(int index) {
         return childDies.get(index-1);
     }
-
-    public static void removeDie(int index) {
-        childDies.remove(index-1);
-    }
-
     public static int getSum() {
         return sum;
     }

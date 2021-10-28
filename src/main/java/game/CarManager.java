@@ -29,19 +29,12 @@ public class CarManager {
                 paint_pattern
         );
         CarManager.addCar(car);
-
     }
 
     public static void addCar(GUI_Car car) {
         childCars.add(car);
     }
-
     public static GUI_Car getCar(int index) {
         return childCars.get(index-1);
     }
-
-    public void removeCar(int index) {
-        childCars.remove(index-1);
-    }
-
 }

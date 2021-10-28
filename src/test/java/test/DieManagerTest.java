@@ -1,8 +1,6 @@
 package test;
 
-import die.Die;
 import die.DieManager;
-import player.PlayerManager;
 
 import game.Game;
 
@@ -35,8 +33,7 @@ public class DieManagerTest {
 
     ArrayList<Double> meanValueTheory = new ArrayList<>();
     ArrayList<Integer> meanValueSums = new ArrayList<>();
-    int[] fieldValue = {250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
-
+    int[] fieldValues = {250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
 
     /**
      * Tests if the throwDie method satisfies the parameters of the minimum and maximum die value allowed
@@ -54,7 +51,6 @@ public class DieManagerTest {
         diceTest();
         theoryTest();
         meanValueTest();
-
     }
 
 
@@ -79,7 +75,6 @@ public class DieManagerTest {
      * compared to the theoretical possible are within the accepted error
      */
     public void theoryTest(){
-
         throwDiesForRounds();
         assertSumError();
 
@@ -185,15 +180,14 @@ public class DieManagerTest {
         double sum1 = 0, sum2 = 0;
 
         for (int i = 0; i < sumAmount.size(); i++){
-            meanValueSums.add(sumAmount.get(i) * fieldValue[i]);
-            meanValueTheory.add(theoreticalPercentage.get(i) * fieldValue[i]);
+            meanValueSums.add(sumAmount.get(i) * fieldValues[i]);
+            meanValueTheory.add(theoreticalPercentage.get(i) * fieldValues[i]);
         }
 
         for (int i = 0; i < sumAmount.size(); i++){
             sum1 = meanValueSums.get(i) + sum1;
             sum2 = meanValueTheory.get(i) + sum2;
         }
-
 
         System.out.println("\n\nMean value for sumAmount: " + (sum1/rounds));
         System.out.println("Mean value for theory:    " + sum2);

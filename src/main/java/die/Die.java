@@ -21,13 +21,8 @@ public class Die {
     public int getFaceValue() {
         return face_value;
     }
-
     public void setFaceValue(int value) {
         face_value = value;
-    }
-
-    public long getId() {
-        return id;
     }
 
     @Override

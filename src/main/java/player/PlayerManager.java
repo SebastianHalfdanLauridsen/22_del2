@@ -147,26 +147,15 @@ public class PlayerManager {
         return childPlayers.get(index-1);
     }
 
-    /**
-     * Removes an object of type GUI_Player from the ArrayList childPlayer
-     * @param index An index of type int in childPlayers
-     */
-    public void removePlayer(int index) {
-        childPlayers.remove(index);
-    }
-
     public static ArrayList<String> getPlayerNames() {
         return playerNames;
     }
-
     public static int getAmountOfPlayers() {
         return amount_of_players;
     }
-
     public static GUI_Player getWinningPlayer() {
         return winning_player;
     }
-
     public static void setWinningPlayer(GUI_Player player) {
         winning_player = player;
     }

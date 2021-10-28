@@ -248,16 +248,9 @@ public final class Game {
             //Shows an 'ok' button that when pressed allows the player to take their turn
             gui.showMessage("Roll for " + PlayerManager.getPlayer(index).getName());
 
-            //roll the dice
             DieManager.throwDies();
-
-            //displays dice at given x and y coordinates with their face values
             displayDice(index);
-
-            //moves the current player's car to the field the dice have chosen
             moveCar(index);
-
-            //Updates the current player's balance, with the rent of the field
             updatePlayerBalance(index);
 
             //Checks if current player's balance is enough to win, if true he wins
@@ -354,9 +347,5 @@ public final class Game {
 
     public static GUI getGUI() {
         return gui;
-    }
-
-    public static int getCurrentField() {
-        return currentField;
     }
 }
