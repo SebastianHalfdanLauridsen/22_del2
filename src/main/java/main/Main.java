@@ -11,6 +11,6 @@ public class Main {
         Game game = new Game(2);
 
         game.playGame();
-        System.exit(0);
+        //System.exit(0);
     }
 }
