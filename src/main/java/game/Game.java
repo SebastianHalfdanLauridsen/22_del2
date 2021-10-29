@@ -40,6 +40,7 @@ public final class Game {
         createFields();
         gui = new GUI(fields);
 
+
         PlayerManager.initiatePlayers();
 
         createPlayerCars(PlayerManager.getAmountOfPlayers());
